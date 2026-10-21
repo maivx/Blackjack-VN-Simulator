@@ -86,7 +86,7 @@ Thực thi file vừa biên dịch và nhập số lượng ván chơi (ví dụ
 ```bash
 ./main
 ```
-# 5. Xem biểu đồ thống kê 
+### 5. Xem biểu đồ thống kê 
 Sau khi chương trình C++ chạy xong và sinh ra dữ liệu, chạy file Python (bieu_do.py) để xem biểu đồ thống kê dòng tiền
 ```bash
 python bieu_do.py
