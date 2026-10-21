@@ -60,21 +60,37 @@ Chương trình cung cấp bảng kết toán tài sản sau mô phỏng kèm th
 
 ---
 
-## ⚙️ Hướng Dẫn Biên Dịch & Chạy Chương Trình
+## Hướng dẫn cài đặt và chạy chương trình
 
-### 1. Biên dịch toàn bộ project C++
-Sử dụng trình biên dịch `g++` để liên kết các file nguồn:
-```bash
-g++ main.cpp Card.cpp Hand.cpp Player.cpp Dealer.cpp -o main.exe
-```
-### 2. Chạy mô phỏng
-Thực thi file vừa biên dịch và nhập số lượng ván chơi (ví dụ: `100000` ván để khử sạch yếu tố may rủi):
-```bash
-.\main.exe
-```
-### 3. Chạy file bieu_do.py để xem biểu đồ dòng tiền (Yêu cầu phải cài đặt thư viện đồ hoạ matplotlib)
-### 4. Cài đặt thư viện đồ họa Python:
+### 1. Yêu cầu hệ thống
+* Trình biên dịch C++ hỗ trợ C++17 trở lên (ví dụ: `g++`).
+* Python 3.x (để vẽ biểu đồ dòng tiền).
+
+### 2. Cài đặt thư viện Python
+Chạy lệnh sau trong terminal để cài đặt thư viện đồ họa cần thiết:
 ```bash
 pip install matplotlib
 ```
+### 3. Biên dịch project C++
+Sử dụng trình biên dịch `g++` để liên kết các file nguồn và tạo file chạy
+```bash
+g++ -std=c++17 main.cpp Card.cpp Hand.cpp Player.cpp Dealer.cpp -o main
+```
+### 4. Chạy mô phỏng
+Thực thi file vừa biên dịch và nhập số lượng ván chơi (ví dụ: '100000' ván để khử đi yếu tố may rủi)
+* Trên Windows
+```DOS
+.\main.exe
+```
+* Trên macOS/Linux
+```bash
+./main
+```
+# 5. Xem biểu đồ thống kê 
+Sau khi chương trình C++ chạy xong và sinh ra dữ liệu, chạy file Python (bieu_do.py) để xem biểu đồ thống kê dòng tiền
+```bash
+python bieu_do.py
+```
+
+
 
