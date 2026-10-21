@@ -80,7 +80,7 @@ g++ -std=c++17 main.cpp Card.cpp Hand.cpp Player.cpp Dealer.cpp -o main
 Thực thi file vừa biên dịch và nhập số lượng ván chơi (ví dụ: '100000' ván để khử đi yếu tố may rủi)
 * Trên Windows
 ```DOS
-.\main.exe
+.\main
 ```
 * Trên macOS/Linux
 ```bash
