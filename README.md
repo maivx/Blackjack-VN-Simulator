@@ -21,16 +21,25 @@ Dự án lập trình hướng đối tượng (OOP) mô phỏng trò chơi bài
 
 Dự án ứng dụng tính kế thừa (`Inheritance`) và ghi đè phương thức (`override`) trong OOP để chia người chơi thành 3 hình mẫu hành vi.
 
-1. **`FunkyPlayer` (Người chơi An toàn / Nhát gan):**
-   * **Chiến lược:** Dừng bài (Stand) ngay khi đạt mức **$\ge 16$ điểm** (ngưỡng đủ tuổi tối thiểu) hoặc khi cầm đủ 5 lá.
-   * **Mục tiêu:** Né rủi ro Quắc tối đa, kỳ vọng nhà cái tự Quắc hoặc thấp điểm hơn.
-   * **Chiến lược:** Dừng bài khi đạt từ **$\ge 17$ điểm** trở lên.
-   * **Mục tiêu:** Nâng cao ngưỡng an toàn, thoát khỏi cái bẫy 16 điểm dễ bị nhà cái bắt bài.
-3. **`RecklessPlayer` (Người chơi Máu liều):**
-   * **Chiến lược:** Tiếp tục rút khi dưới 18 điểm. Trường hợp đặc biệt: Đang có đúng 18 điểm và cầm 4 lá vẫn bốc tiếp lá thứ 5 để săn Ngũ Linh. (bật cờ `checkBetter28` nếu vượt ngưỡng).
-   * **Mục tiêu:** Theo đuổi điểm số tuyệt đối, bất chấp rủi ro Quắc cực cao.
+## 🧠 Mô Hình Hóa Chiến Lược Người Chơi (Inheritance trong OOP)
 
----
+Dự án ứng dụng tính kế thừa (`Inheritance`) và ghi đè phương thức (`override`) trong Lập trình Hướng đối tượng (OOP) để phân tách các hình mẫu hành vi chiến thuật khác nhau của người chơi trong trò chơi Blackjack.
+
+### 1. Người chơi Nhát gan / An toàn (`FunkyPlayer`)
+* **Hành vi (Code Logic):** Hàm `MakeDecision` được ghi đè để ưu tiên rút thêm bài (`Hit`) nếu điểm số dưới 16. Ngay khi đạt mức $\ge 16$ điểm (ngưỡng "đủ tuổi" tối thiểu) hoặc khi đã cầm đủ 5 lá bài, người chơi này lập tức dừng rút (`Stand`).
+* **Mục tiêu:** Tránh rủi ro bị Quắc (`Bust`) ở mức tối đa bằng cách dừng lại ngay ở ranh giới an toàn nhất, kỳ vọng nhà cái sẽ tự Quắc hoặc có điểm thấp hơn.
+
+### 2. Người chơi Tối ưu (`OptimalPlayer`)
+* **Hành vi (Code Logic):** Tiếp tục rút thêm bài (`Hit`) nếu điểm số dưới 17, chấp nhận rủi ro ở mốc 16 điểm vốn dễ bị nhà cái bắt bài. Chỉ dừng lại (`Stand`) khi đạt từ $\ge 17$ điểm trở lên hoặc khi đã có đủ 5 lá bài.
+* **Mục tiêu:** Nâng cao ngưỡng an toàn, tạo ra một thế bài vững chắc hơn và cân bằng tốt giữa rủi ro rút lố với tỷ lệ thắng thực tế trước nhà cái.
+
+### 3. Người chơi Máu liều (`RecklessPlayer`)
+* **Hành vi (Code Logic):** Đây là class có logic phức tạp và rủi ro cao nhất:
+  * Rút bài (`Hit`) liên tục nếu tổng điểm dưới 18.
+  * **Trường hợp đặc biệt:** Nếu đang có đúng 18 điểm và đã cầm 4 lá bài, người chơi vẫn tiếp tục rút lá thứ 5 để săn Ngũ Linh (bất chấp rủi ro Quắc cực cao). Nếu tổng điểm vượt ngưỡng $\ge 28$, hệ thống sẽ kích hoạt cờ kiểm tra `checkBetter28 = true`.
+  * Chỉ dừng lại (`Stand`) khi đạt từ 18 điểm trở lên.
+* **Mục tiêu:** Bỏ qua sự an toàn để theo đuổi điểm số tuyệt đối (19–21 điểm) hoặc mù quáng săn Ngũ Linh khi đã cầm 4 lá trên tay.
+
 
 ## 🏦 Giải Mã Lợi Thế Nhà Cái (Dealer Strategy)
 
