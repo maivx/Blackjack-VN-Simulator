@@ -19,10 +19,6 @@ Dự án lập trình hướng đối tượng (OOP) mô phỏng trò chơi bài
 
 ## 👥 Mô Hình Hóa Chiến Lược Người Chơi (Inheritance trong OOP)
 
-Dự án ứng dụng tính kế thừa (`Inheritance`) và ghi đè phương thức (`override`) trong OOP để chia người chơi thành 3 hình mẫu hành vi.
-
-## 🧠 Mô Hình Hóa Chiến Lược Người Chơi (Inheritance trong OOP)
-
 Dự án ứng dụng tính kế thừa (`Inheritance`) và ghi đè phương thức (`override`) trong Lập trình Hướng đối tượng (OOP) để phân tách các hình mẫu hành vi chiến thuật khác nhau của người chơi trong trò chơi Blackjack.
 
 ### 1. Người chơi Nhát gan / An toàn (`FunkyPlayer`)
